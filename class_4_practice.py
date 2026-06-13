@@ -18,3 +18,22 @@ with open("runs.txt",'w') as f:
 
 with open("runs.txt",'r') as f:
     print(f.read())
+
+# problem-2
+import csv
+from functools import reduce
+
+n=int(input("Enter the number of rows: "))
+
+rows=[]
+for _ in range(n):
+    member_id=input("Enter member ID: ")
+    score=int(input("Enter score: "))
+    rows.append((member_id,score))
+
+with open("vault.csv",'w',newline='') as f:
+    writer=csv.writer(f)
+    writer.writerow(["Member ID","Score"])
+    writer.writerows(rows)
+
+
